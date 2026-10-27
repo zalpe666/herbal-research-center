@@ -19,4 +19,8 @@ class PlantHerb extends Model
         'side_effects',
         'references',
     ];
+    public function variations()
+    {
+        return $this->hasMany(Variation::class, 'id_herb');
+    }
 }

@@ -7,7 +7,7 @@
     <div class="min-h-screen bg-gray-50">
 
 
-        <section class="bg-green-950 text-white">
+        <section class="bg-green-700 text-white">
             <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
 
                 <div class="max-w-3xl">
@@ -134,7 +134,7 @@
 
         <section class="mx-auto max-w-7xl px-6 pt-12 lg:px-8">
 
-            <form method="GET" action="{{ route('herbal-garden-plants.index') }}"
+            <form method="GET" action="{{ route('herbal-garden.plants') }}"
                 class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
 
                 <div class="grid gap-4 md:grid-cols-[1fr_auto_auto]">
@@ -203,7 +203,7 @@
                 @if (request()->hasAny(['search', 'sort']))
                     <div class="mt-4">
 
-                        <a href="{{ route('herbal-garden-plants.index') }}"
+                        <a href="{{ route('herbal-garden.plants') }}"
                             class="inline-flex items-center gap-2
                                text-sm font-medium text-gray-500
                                transition hover:text-green-700">
@@ -436,7 +436,7 @@
                         Coba gunakan kata kunci lain.
                     </p>
 
-                    <a href="{{ route('herbal-garden-plants.index') }}"
+                    <a href="{{ route('herbal-garden.plants') }}"
                         class="mt-6 inline-flex items-center gap-2
                            rounded-xl bg-green-700 px-5 py-3
                            text-sm font-semibold text-white

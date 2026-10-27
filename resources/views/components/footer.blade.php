@@ -1,4 +1,4 @@
-<footer class="border-t border-green-900/20 bg-green-900 text-white">
+<footer class="border-t border-green-900/20 bg-green-700 text-white">
 
     <div class="mx-auto max-w-7xl px-6">
 
@@ -10,7 +10,7 @@
                 <div class="flex items-center gap-3">
 
                     <div
-                        class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/10">
+                        class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white">
 
                         <img src="{{ asset('images/logo-uy.png') }}" alt="Logo Universitas YARSI"
                             class="h-7 w-7 object-contain">
@@ -55,7 +55,7 @@
                         About Us
                     </a>
 
-                    <a href="{{ route('herbal-garden') }}"
+                    <a href="{{ route('herbal-garden.index') }}"
                         class="block text-sm text-green-100/70 transition hover:text-white">
                         Herbal Garden
                     </a>

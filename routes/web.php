@@ -4,24 +4,47 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminPlantController;
+use App\Http\Controllers\HerbalGardenController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PhytochemistryController;
+use App\Http\Controllers\AnimalResearchController;
+use App\Http\Controllers\HistologyController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HerbalTestingServicesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about-us');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/herbal-garden', [HomeController::class, 'herbalGarden']) ->name('herbal-garden');
-Route::get('/herbal-garden/plants', [HomeController::class, 'plants'])->name('herbal-garden-plants.index');
-Route::get('/herbal-garden/plants/{plant:slug}', [HomeController::class, 'herbalGardenShow'])->name('herbal-garden.show');
+Route::get('/herbal-garden', [HerbalGardenController::class, 'index'])->name('herbal-garden.index');
+Route::get('/herbal-garden/plants', [HerbalGardenController::class, 'plants'])->name('herbal-garden.plants');
+Route::get('/herbal-garden/plants/{plant:slug}', [HerbalGardenController::class, 'show'])->name('herbal-garden.show');
 
+Route::get('/herbal-testing-services', [HerbalTestingServicesController::class, 'index'])->name('herbal-testing-services.index');
+Route::get('/herbal-testing-services/extraction', [HerbalTestingServicesController::class, 'extraction'])->name('herbal-testing-services.extraction');
 
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/phytochemistry', [PhytochemistryController::class, 'index'])->name('phytochemistry.index');
+Route::get('/animal-research', [AnimalResearchController::class, 'index'])->name('animal-research.index');
+Route::get('/histology', [HistologyController::class, 'index'])->name('histology.index');
+Route::get('/animal-research', [AnimalResearchController::class, 'index'])->name('animal-research.index');
 
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+Route::get('/shop/{plantHerb:slug}', [ShopController::class, 'show'])->name('shop.show');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'index'])
+        ->name('cart');
+
+    Route::post('/cart/add', [CartController::class, 'add'])
+        ->name('cart.add');
+
+    Route::delete('/cart/{variation}', [CartController::class, 'remove'])
+        ->name('cart.remove');
+});
 
 
 Route::middleware('auth')->group(function () {
@@ -48,5 +71,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/plants/{plant}', [AdminPlantController::class, 'destroy'])
         ->name('admin.plants.destroy');
 });
+
 
 require __DIR__ . '/auth.php';
