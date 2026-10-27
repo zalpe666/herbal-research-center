@@ -188,8 +188,8 @@
             <div class="grid items-center gap-8 text-justify lg:grid-cols-[3fr_2fr]">
                 <!-- Kiri -->
                 <div class="">
-                    <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl leading-tight">
-                        Analisis Mikroskopis & Molekuler <br class="hidden md:block"> Presisi untuk Riset Anda
+                    <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-5xl leading-tight text-left">
+                        Analisis Mikroskopis & Molekuler Presisi untuk Riset Anda
                     </h1>
                     <p
                         class="text-xl mt-4 max-w-2xl leading-7 text-gray-600 bg-green-50/50 p-4 md:p-8 shadow-sm border border-green-100 backdrop-blur-sm">

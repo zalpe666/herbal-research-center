@@ -118,9 +118,6 @@
                 <p class="relative z-10 mt-2 text-sm leading-relaxed text-gray-500">
                     Herbal therapeutic research
                 </p>
-                <p class="relative z-10 mt-2 text-sm leading-relaxed text-gray-500">
-                    On Going
-                </p>
 
                 <div class="relative z-10 mt-5 flex items-center gap-2 text-sm font-semibold text-green-700">
                     Explore
@@ -148,9 +145,6 @@
 
                 <p class="relative z-10 mt-2 text-sm leading-relaxed text-gray-500">
                     Tissue & molecular analysis
-                </p>
-                <p class="relative z-10 mt-2 text-sm leading-relaxed text-gray-500">
-                    DONE
                 </p>
                 <div class="relative z-10 mt-5 flex items-center gap-2 text-sm font-semibold text-green-700">
                     Explore
